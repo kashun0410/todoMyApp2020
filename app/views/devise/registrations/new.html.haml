@@ -1,0 +1,41 @@
+- content_for(:html_title) {'新規登録/To-Do'}
+
+.account-page
+  = render "devise/shared/header"
+  .account-page__content
+    .contents
+      %h2.contents__head
+        ログインはこちらから
+        = link_to "ログイン", '/users/sign_in', class: 'contents__head__create'
+      = form_for(resource, as: resource_name,  url:registration_path(resource_name)) do |f|
+        .field
+          .field__label
+            = f.label :name, "ニックネーム"
+          %span.field__require
+            必須
+          .field__input
+            = f.text_field :name, placeholder: '例)トードー', autofocus: true
+        .field
+          .field__label
+            = f.label :email, "メールアドレス"
+          %span.field__require
+            必須
+          .field__input
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+        .field
+          .field__label
+            = f.label :password
+          %span.field__require
+            必須
+          .field__input
+            = f.password_field :password, placeholder: '英数字8文字以上', autocomplete: "off"
+        .field
+          .field__label
+            = f.label :password_confirmation
+          %span.field__require
+            必須
+          .field__input
+            = f.password_field :password_confirmation, autocomplete: "off"
+        .actions
+          = f.submit "次へ進む", class: 'action'
+    .account-page__content__foot

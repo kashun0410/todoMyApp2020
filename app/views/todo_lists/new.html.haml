@@ -1,0 +1,32 @@
+- content_for(:html_title) {'新規作成/To-Do'}
+
+.header
+  = render "shared/header_main"
+.new-task
+  .new-task__title
+    新規作成
+  .contents
+    = form_for @todoLists, class: :contents__form do |f|
+      = f.text_field :title, placeholder: :タイトル, class: :contents__form__title
+      = f.text_area :content, placeholder: :詳細, class: :contents__form__details
+      .option
+        オプション
+        .option__lank
+          重要度
+          = f.select :lank, TodoList.lanks_i18n.invert, {prompt: '選択してください'}, class: :option__lank__select
+        .option__stars
+          難易度
+          = f.radio_button :star, "1",id: :star__1, class: :option__stars__radio
+          = f.label "★", for: "star__1", class: :option__stars__label
+          = f.radio_button :star, "2",id: :star__2, class: :option__stars__radio
+          = f.label "★★", for: "star__2", class: :option__stars__label
+          = f.radio_button :star, "3",id: :star__3, class: :option__stars__radio
+          = f.label "★★★", for: "star__3", class: :option__stars__label
+          = f.radio_button :star, "4",id: :star__4, class: :option__stars__radio
+          = f.label "★★★★", for: "star__4", class: :option__stars__label
+          = f.radio_button :star, "5",id: :star__5, class: :option__stars__radio
+          = f.label "★★★★★", for: "star__5", class: :option__stars__label
+        .option__d-line
+          期限
+          = f.date_field :deadline_date, class: "option__d-line__date"
+      = f.submit "投稿", class: :submit__btn

@@ -1,0 +1,18 @@
+- content_for(:html_title) {'ログイン/To-Do'}
+
+.account-page
+  = render "devise/shared/header"
+.account-page__content
+  .contents
+    %h2.contents__head
+      アカウントをお持ちでない方はこちら
+      = link_to "新規会員登録", new_registration_path(resource_name), class: 'contents__head__create'
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        .field__input
+          = f.email_field :email, placeholder: 'メールアドレス', autofocus: true
+        .field
+          .field__input
+            = f.password_field :password, placeholder: 'パスワード', autocomplete: "off"
+        .actions
+          = f.submit "ログイン", class: 'action'
