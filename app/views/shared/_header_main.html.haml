@@ -1,0 +1,13 @@
+.title
+  = link_to 'To-Do', root_path
+.user
+  .user__name
+    = current_user.name
+    .user__name__edit
+      = link_to edit_user_path(current_user) do
+        = icon('fas','user-edit')
+  .achievement
+    .achievement__percent
+    .achievement__bar
+      %p#header-clock
+        ※NowLoading…
