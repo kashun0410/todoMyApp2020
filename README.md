@@ -3,6 +3,10 @@
 ## タイトル
 To-Do.Project
 
+#### 旧開発環境
+※開発環境変更のため、本リポジトリは以下より以降したものとなっております。<br>
+https://github.com/kashun0410/todoMyApp
+
 ### リンク
 https://todomyapp-2020.herokuapp.com
 （ログインページに遷移します）<br>
@@ -34,6 +38,7 @@ https://todomyapp-2020.herokuapp.com
 ## バージョン
 Ver.1.0 リリース
 　　　　　基本的な機能（ログイン、投稿、削除）
+
      
 ## 課題とこれからの実装予定
 　Ver.1.0時点ではトップページ右側の難易度、重要度、期限は存在しているのみであるため
