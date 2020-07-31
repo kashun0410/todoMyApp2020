@@ -1,9 +1,9 @@
 .main-list
   - @todoLists.each do |todo_list|
-    .task
+    .task#task
       - if todo_list.user_id == current_user.id
         .task__delete
-          = link_to todo_list_path(todo_list), method: :delete, class: :"task__delete__link", data: {confirm: "本当に削除しますか？"} do
+          = link_to todo_list_path(todo_list), method: :delete, class: :"task__delete__link", data: {confirm: "削除します。よろしいですか？"} do
             = icon('fas', 'times')
       - else
         .task__delete--alt
@@ -17,8 +17,8 @@
         作成日：
         = l(todo_list.created_at, format: :long)
       .task__option
-        %p.task__option__lank
-          = "#{todo_list.lank}ランク"
+        %p.task__option__rank
+          = "#{todo_list.rank}ランク"
         %p.task__option__star
           = "★×#{todo_list.star}"
         %p.task__option__d-line
