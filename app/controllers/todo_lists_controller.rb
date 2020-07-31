@@ -31,7 +31,7 @@ class TodoListsController < ApplicationController
 
   private
   def post_params
-    params.require(:todo_list).permit(:title, :content, :lank, :star, :deadline_date).merge(user_id: current_user.id)
+    params.require(:todo_list).permit(:title, :content, :rank, :star, :deadline_date).merge(user_id: current_user.id)
   end
 
 end

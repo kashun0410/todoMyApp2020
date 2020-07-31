@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_18_165403) do
   create_table "todo_lists", force: :cascade do |t|
     t.text "title"
     t.text "content"
-    t.string "lank"
+    t.string "rank"
     t.string "star"
     t.string "deadline_date"
     t.datetime "created_at", null: false

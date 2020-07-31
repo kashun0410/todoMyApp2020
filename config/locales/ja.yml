@@ -2,7 +2,7 @@
 ja:
   enums:
     todo_list:
-      lanks:
+      ranks:
         D: "Dランク"
         C: "Cランク"
         B: "Bランク"
